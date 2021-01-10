@@ -5,7 +5,7 @@
 layout: home
 ---
 
-An eventual (building) collections of resources that I frequently need for use or refreshers.
+An eventual collections of resources that I frequently need for use or refreshers. Everything will be tweaked overtime.
 
 ## Math ##
 
@@ -29,3 +29,19 @@ An eventual (building) collections of resources that I frequently need for use o
 
   \end{tikzpicture}
 </script>
+
+
+<!-- How to run     - https://stackoverflow.com/questions/53267193/p5js-with-jekyll -->
+<!-- How to convert - http://jonathan.dahlberg.media/processing2js/ -->
+<!-- Load processing script -->
+<div id="sketch-unitCircle"></div>
+<script src="{{site.baseurl}}/assets/animations/unitCircle.js"></script>
+<!-- <script src="{{ base.url | prepend: site.url }}/animations/unitCircle.js"></script> -->
+
+<!-- <script src="unitCircle.js"></script> -->
+
+<!-- Note important change made in the sketch file
+    const canvas = createCanvas(800, 400);
+    canvas.parent('sketch-holder') -->
+
+Cool, I can embed animations I made with processing.
