@@ -1,0 +1,67 @@
+---
+layout: page
+title: Math
+permalink: /math/
+---
+
+You will find notes on Calculus, Linear Algebra, etc here. I am hoping it will serve as a good reference and reminder of basics when I am doing harder math.
+<br><br>
+
+
+<!-- 
+	- Finds all math documents and lists them based on topic.
+	- The topic list is alphabetized and provides links to each page,
+	Which are also alphabetized
+	
+	- Each math page is expected to have
+	 : layout
+	 : title
+	 : topic (Note: Ignores case to dummy proof against myself)
+-->
+<!-- Get all unique topics (in lowercase) -->
+{% assign categories =  site.math | map: "topic" | join: ',' | downcase | split: ',' | uniq | sort %}
+
+{% for cat in categories %}
+	<!-- Show the topic Header -->
+	<h3>{{cat | capitalize }}</h3>
+	
+	<!-- Find all the revelant links for topic to be sorted -->
+	{% assign links = '' | split: '' %}
+	{% for m in site.math %}
+		{% assign downcase_cat = m.topic | downcase %}
+		{% if cat == downcase_cat %}
+			{% assign links = links | push: m %}			
+		{% endif %}
+	{% endfor %}
+
+	{% assign sorted_links = links | sort:"title"%}
+
+	<!-- List all the links -->
+	<ul>
+	{% for link in sorted_links %}
+		<li><a href="{{link.url}}">{{ link.title | capitalize | strip }}</a></li>
+	{% endfor %}
+	</ul>
+{% endfor %}
+
+
+<script type="text/tikz">
+  \begin{tikzpicture}
+    % coordinate axis
+    \draw[<->] (-2.5,0) -- (4,0);
+    \draw[<->] (0,-2.5) -- (0,2.5);
+    % circle
+    \draw (0,0) circle (2cm);
+
+    \coordinate  				(A) at (60:2);
+    \coordinate                 (O) at ( 0:0);
+    \coordinate  				(S) at ( 0: {2 * cos(60)});		% sin(x)
+    \coordinate  				(T) at ( 0: {2 * tan(60)});		% tan(x)
+
+
+    % angles
+    \draw[thick]    (A) -- (S)  (O) -- (A); 	% Triangle
+    \draw[thick] 	(T) -- (A); 				% Tangent line
+
+  \end{tikzpicture}
+</script>
