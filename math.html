@@ -26,7 +26,7 @@ You will find notes on Calculus, Linear Algebra, etc here. I am hoping it will s
 	<h3>{{cat | capitalize }}</h3>
 	
 	<!-- Find all the revelant links for topic to be sorted -->
-	{% assign links = '' | split: '' %}
+	{% assign links = '' | split: '' %}  <!-- Empty Array -->
 	{% for m in site.math %}
 		{% assign downcase_cat = m.topic | downcase %}
 		{% if cat == downcase_cat %}
