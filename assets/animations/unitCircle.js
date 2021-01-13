@@ -3,9 +3,16 @@ let y = 0.0;
 let x_1 = 0;
 let y_1 = 0;
 function setup(){
-    const canvas = createCanvas(800, 400);
+    var viewport = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    const winWidth = viewport;
+    const winHeight = winWidth/2;
+    const canvas = createCanvas(winWidth, winHeight);
     canvas.parent('sketch-unitCircle')
     frameRate(60);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowWidth / 2);
 }
 
 function easeInOut(t, b, c, d){
