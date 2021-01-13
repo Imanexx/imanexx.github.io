@@ -4,7 +4,7 @@ let x_1 = 0;
 let y_1 = 0;
 function setup(){
     var viewport = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    const winWidth = viewport;
+    const winWidth = (viewport < 800) ? viewport : 800;
     const winHeight = winWidth/2;
     const canvas = createCanvas(winWidth, winHeight);
     canvas.parent('sketch-unitCircle')
@@ -12,7 +12,8 @@ function setup(){
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowWidth / 2);
+  const winWidth = (windowWidth < 800) ? windowWidth : 800;
+  resizeCanvas(winWidth, winWidth / 2);
 }
 
 function easeInOut(t, b, c, d){
