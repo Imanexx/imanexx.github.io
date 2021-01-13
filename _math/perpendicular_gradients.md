@@ -3,15 +3,16 @@ layout: page
 title: Gradients of perpendicular lines $(m_1 \cdot m_2 = -1)$
 topic: algebra
 ---
-I was looking at some questions concerning tangent lines to curves and then finding the normal equation. This is when I came across the following:
+I was looking at some questions concerning tangent lines to curves, and finding the equation of the normal. This is when I came across the following:
 
-{% raw %} <!-- tell jekyll to not take any notice of syntax for liquid etc. -->
-$$
+> If two lines, with gradients $m_1$ and $m_2$ are at right angles then $m_1 \cdot m_2 = -1$.
+
+
+<!-- $$
 \fbox{
 	If two lines, with gradients $m_1$ and $m_2$ are at right angles then $m_1 \cdot m_2 = -1$.
 }
-$$
-{% endraw %}
+$$ -->
 
 I had always accepted that the gradient of the normal is $-\frac{1}{m}$ but I had never considered the proof. And this is a bit of a weird question to look up so here is a few answers.
 <h6>(Maybe there is a better title or name for this result)</h6>  
