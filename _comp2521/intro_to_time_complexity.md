@@ -51,7 +51,7 @@ $ time python3 fib.py recursive_fib()
 Answer: 9227465
 real    0m3.152s
 ```
-This does **not** mean that recursion is _always_ bad. It means that we need some notion of evaluating how much 'computation' a program is doing. What we are building up to is a way to analysis how long each line of code takes in our program.
+This does **not** mean that recursion is _always_ bad. It means that we need some notion of evaluating how much 'computation' a program is doing. What we are building up to is a way to analyse how long each line of code takes in our program.
 
 <div class="mermaid">
 graph TD;
@@ -83,7 +83,7 @@ The algorithm wants to find what position the number '2' is in. It will start fr
 
 To analysis the "Worst Case Time Complexity", we want to provide an input that makes the algorithm run for the most amount of time. The 'worst' input array we can provide for this example is one where '2' is in the last position.
 
-This way we are analyzing the 'most' amount of work the algorithm will have to do for any given input.
+This way we are analysing the 'most' amount of work the algorithm will have to do for any given input.
 
 <div class="mermaid">
 graph TD;
@@ -94,7 +94,7 @@ graph TD;
 
 In this example we gave 10 numbers as the input. Hence $n = 10$. Overall the algorithm had to look at all 10 numbers before it found '2' (in the worst case). Since we had to look at 10 numbers and $n = 10$, our algorithm has the time complexity $\mathcal{O}(n)$.
 
-Using this notation is useful for when we change the value of $n$. If we run the exact some algorithm for an array of 20 values, $n=20$, our final answer will still be  $\mathcal{O}(n)$.
+Using this notation is useful for when we change the value of $n$. If we run the exact same algorithm for an array of 20 values, $n=20$, our final answer will still be  $\mathcal{O}(n)$.
 
 
 ### Big-O notation?
@@ -156,16 +156,16 @@ $$
 \end{align*}
 $$
 
-Lets take the highest degree, which is $n$ and ignore the coefficient.
+Let's take the highest degree, which is $n$ and ignore the coefficient.
 
 Answer: $\mathcal{O}(n)$
 
 As our input gets larger, we need to do more work in the loop. $\mathcal{O}(n)$ tells us that the amount of work grows linearly. Let's check if that matches our intuition. If we change N to N=11, the loop will need to do an extra call. If we change it again to N=12, we will make the loop do another call on top of that. 
 
-Each time we increase the number by one, the loop increase by one. Hence the computation increases linearly in terms of the input we give it.
+Each time we increase the number by one, the loop increases by one. Hence the computation increases linearly in terms of the input we give it.
 
 ### Why is the `while (i < N) {` $n + 1$?  
-Lets do an example with $N = 3$. How many comparison do we do.
+Let's do an example with $N = 3$. How many comparison do we do.
 ```c
 int i = 0;
 int N = 3;
@@ -221,7 +221,7 @@ It makes sense that we got the same answer as before because there is no discern
 <br>
 
 ## **Shortcut method for simple loops**
-As you analysis different examples you should start getting comfortable with how long certain operations take. 
+As you analyse different examples you should start getting comfortable with how long certain operations take. 
 
 For-loops are commonly $\mathcal{O}(n)$ if:
 1. All operations inside the loop are $\mathcal{O}(1)$
@@ -230,7 +230,7 @@ For-loops are commonly $\mathcal{O}(n)$ if:
 
 Instead of calculating each line precisely, we can instead roughly approximate what Big-O class they belong to. 
 
-Before we calculated the Big-O of $3n + 3$ by taking the 'highest degree term'. Notice how the number of constant operations were thrown away at the end of the calculation. Instead of keeping track of all constant operations, lets approximate them instead.
+Before we calculated the Big-O of $3n + 3$ by taking the 'highest degree term'. Notice how the number of constant operations were thrown away at the end of the calculation. Instead of keeping track of all constant operations, let's approximate them instead.
 
 Imagine a larger size input, say n = 10,000. Adding an extra 20 constant operations does not change the linear factor of the running time of the program. Neither does adding 500 constant operations and having a higher coefficient. In fact all of these give the same answer.
 
@@ -290,11 +290,11 @@ Answer: $O(1) \times O(n) \times O(n) = \mathcal{O}(n^2)$
 
 The main thing to understand here is that the `printf()` relies on both loops executing. 
 
-How many times does the `int j = 0` occur? Well we know the outer most for-loop is $\mathcal{O}(n)$. Hence, `int j = 0` occurs n times. In fact, that inner loop is going to do it's counting sequence n times. This is why we multiple the time complexities.
+How many times does the `int j = 0` occur? Well we know the outermost for-loop is $\mathcal{O}(n)$. Hence, `int j = 0` occurs n times. In fact, that inner loop is going to do its counting sequence n times. This is why we multiply the time complexities.
 
 ## Recap
 
-Hopefully this is a good start to understanding time complexities. You may be wondering what exponential and logarithmic programs looks like and how can we analyses them. We will be going through more examples later. The important thing to take away now is how we are counting the amount of computation that is being done in the worst case situation based on the size of the input.
+Hopefully this is a good start to understanding time complexities. You may be wondering what exponential and logarithmic programs look like and how we can analyse them. We will be going through more examples later. The important thing to take away now is how we are counting the amount of computation that is being done in the worst case situation based on the size of the input.
 
 TODO -> Key takeaways
 
