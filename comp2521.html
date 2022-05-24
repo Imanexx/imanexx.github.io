@@ -1,0 +1,45 @@
+---
+layout: page
+title: Comp2521
+permalink: /comp2521/
+---
+
+A collection of teaching notes and resourses that I have accumulated over many years of teaching this subject. I started in 2019, but I am only just putting things onlines now. More notes will be added as time goes on.
+<br><br>
+
+
+<!-- 
+	- Finds all math documents and lists them based on topic.
+	- The topic list is alphabetized and provides links to each page,
+	Which are also alphabetized
+	
+	- Each math page is expected to have
+	 : layout
+	 : title
+	 : topic (Note: Ignores case to dummy proof against myself)
+-->
+<!-- Get all unique topics (in lowercase) -->
+{% assign categories =  site.comp2521 | map: "topic" | join: ',' | downcase | split: ',' | uniq | sort %}
+
+{% for cat in categories %}
+	<!-- Show the topic Header -->
+	<h3>{{cat | capitalize }}</h3>
+	
+	<!-- Find all the revelant links for topic to be sorted -->
+	{% assign links = '' | split: '' %}  <!-- Empty Array -->
+	{% for m in site.comp2521 %}
+		{% assign downcase_cat = m.topic | downcase %}
+		{% if cat == downcase_cat %}
+			{% assign links = links | push: m %}			
+		{% endif %}
+	{% endfor %}
+
+	{% assign sorted_links = links | sort:"title"%}
+
+	<!-- List all the links -->
+	<ul>
+	{% for link in sorted_links %}
+		<li><a href="{{link.url}}">{{ link.title | capitalize | strip }}</a></li>
+	{% endfor %}
+	</ul>
+{% endfor %}

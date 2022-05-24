@@ -32,6 +32,8 @@ plugins:
 collections:
   math:
     output: true
+  comp2521:
+    output: true
   #cvision:
     #output: true
 

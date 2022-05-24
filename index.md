@@ -9,6 +9,8 @@ An eventual collection of resources that I use frequently or need for a quick re
 Everything will gradually grow and be tweaked overtime.
 
 ## [Math]({% link math.html %}) ##
+## [COMP2521]({% link comp2521.html %}) ##
+
 
 <!-- How to run     - https://stackoverflow.com/questions/53267193/p5js-with-jekyll -->
 <!-- How to convert - http://jonathan.dahlberg.media/processing2js/ -->
