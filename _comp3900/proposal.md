@@ -4,23 +4,33 @@ title: Initial Proposal
 topic: Proposal
 ---
 The main ideas:
-1. The system must enforce "Yavalath" board game ruleset on an online website
-2. Users can create an account and log in
-3. Users can play against friend/s using the same url (remote play)
-4. User can play against AI/Computer
 
-5. User can check their stats and reflect on gameplay
-6. The system keeps track of (players elo)/game states/leaderboards/(hall of fame)
+Database:
+- (UI/DATABASE) Users can create an account and log in, authenticate, with persisted data.
+- (UI/DATABASE) The system keeps track of all GLOBAL players rankings / leaderboard / games
+- (DATBASE/UI) The user can view their own PERSONAL profile to see their stats for all their games they have played
+- **(N)** (DATABASE/UI) The system stores games to allow The player to do post game replays of past games. They are able to rewind or fast forward through the game to view moments.
+
+Backend:
+
+- (LOGIC/little ui) The system must enforce "Yavalath" board game ruleset on an online desktop website
+- (LOGIC/UI) Users can play against friend/s using the same url (remote play)
+- (LOGIC/little ui) User can select a mode to play against an AI/Computer only.
+
+
+## Flesh out dotpoints
+1. The system must enforce "Yavalath" board game ruleset on an online desktop website
+
+
+<!-- - **(N)** (UI/LOGIC) Ability to play both ranked and casual gamemodes. Causual will have additional gamemodes which offer customized gameplay. ~~with custom maps being an extension of casual gameplay.~~
+  - Custom board configurations (missing hex squares or larger board sizes)
+  - handicaps??  
+~~- powerups~~  -->
+
+
+- **(N)** (UI/LOGIC) Ability to play ranked, casual and additional custom gamemodes that offer changes to the normal gameplay. 
 
 ~~8. The game is played on an online website??~~
-
-Novelties:
-7. The system stores games/ The player can review replays of past games
-9. Ability to play custom game-modes and extensions/rule changes.
-- Custom board configurations (missing hex squares or larger board sizes)
-- handicaps
-- powerups 
-
 
 # Dot point ideas
 - Training module
